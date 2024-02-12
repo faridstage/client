@@ -4,6 +4,11 @@
   "newProjectRoot": "projects",
   "projects": {
     "angel": {
+      "i18n":{
+        "sourceLocale":"en-US",
+        "locales": {"ar-AE": "src/locale/messages.ar.xlf"
+      }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +22,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": [
+              "ar-AE"
+            ],
             "outputPath": "dist/angel",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -30,6 +38,11 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -100,5 +113,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "079df503-6b4e-4027-ac3e-b12968f3d44b"
   }
 }
